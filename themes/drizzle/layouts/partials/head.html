@@ -1,4 +1,6 @@
 <title> {{ .Site.Title }} </title>
+<link rel="icon" type="image/x-icon" sizes="16x16" href="/themes/drizzle/static/images/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/themes/drizzle/static/images/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> {{/* Scale text sizes properly for mobile srceens */}}
 {{ $styles := resources.Get "css/styles.scss" | toCSS | postCSS (dict "config" "./assets/css/postcss.config.js") }}
 {{ if .Site.IsServer }}
@@ -7,4 +9,4 @@
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 {{ end }}
-<link rel="icon" type="image/ico" sizes="16x16" href="/themes/drizzle/static/images/favicon.ico">
+
